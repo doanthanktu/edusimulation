@@ -24,6 +24,7 @@ export default class SceneStart extends Phaser.Scene {
         window.isMusicPlaying = true;
 
         this.scene.stop('mus')
+        this.scene.stop('load')
 
         if (this.registry.values.hasOwnProperty('admin')) {
             let isAdmin = this.registry.get('admin');

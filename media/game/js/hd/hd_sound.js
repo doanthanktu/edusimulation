@@ -27,6 +27,7 @@ export default class mus extends Phaser.Scene {
             music5: this.sound.add('music5'),
             music6: this.sound.add('music6'),
             music7: this.sound.add('music7'),
+            music8: this.sound.add('music8'),
             // music5: this.sound.add('footstep')
         };
 
@@ -83,6 +84,9 @@ export default class mus extends Phaser.Scene {
         this.input.keyboard.on('keydown-SEVEN', () => {
             this.playBackgroundMusic('music7');
         });
+        this.input.keyboard.on('keydown-EIGHT', () => {
+            this.playBackgroundMusic('music8');
+        });
 
         // Khi nhấn phím P để hoàn tất lựa chọn
         this.input.keyboard.on('keydown-P', () => {
@@ -103,6 +107,11 @@ export default class mus extends Phaser.Scene {
         }
         this.currentMusic = this.backgroundMusic[key];
         this.currentMusic.volume = 0.3;
+
+        this.currentMusic.on('complete', () => {
+            this.playBackgroundMusic(key); // Phát lại âm thanh khi kết thúc
+        });
+        
         this.currentMusic.play(); // Phát âm thanh mới được chọn
     };
 

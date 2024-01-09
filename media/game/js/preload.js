@@ -72,9 +72,6 @@ export default class DATA extends Phaser.Scene {
             frameHeight: 32,
         })
 
-
-
-
     }
 
     create() {

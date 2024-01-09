@@ -8,7 +8,7 @@ export default class Load1 extends Phaser.Scene {
         this.load.spritesheet('gifFramess', 'assets/images/load-IMG/scene-load/png/load_1.png', {
             frameWidth: 720,
             frameHeight: 480,
-            endFrame: 42
+            endFrame: 76
         });
     }
 
@@ -20,7 +20,7 @@ export default class Load1 extends Phaser.Scene {
         this.scale.displaySize.setAspectRatio(sceneWidth / sceneHeight);
         this.scale.refresh();
 
-        const numberOfFrames = 42;
+        const numberOfFrames = 76;
         if (!this.anims.exists('gif_1')) {
             this.anims.create({
                 key: 'gif_1',
